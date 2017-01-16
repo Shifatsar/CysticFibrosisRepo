@@ -1,0 +1,27 @@
+[
+	{
+		"date": "02/01/2017",
+		"type": "breakfast",
+		"content" : ["bread", "egg"]
+	},
+	{
+		"date": "02/01/2017",
+		"type": "lunch",
+		"content" : ["curry", "rice", "juice"]
+	},
+	{
+		"date": "02/01/2017",
+		"type": "dinner",
+		"content" : ["pasta", "something", "coke"]
+	},
+	{
+		"date": "03/01/2017",
+		"type": "breakfast",
+		"content" : ["toast", "jam", "tea"]
+	},
+	{
+		"date": "03/01/2017",
+		"type": "lunch",
+		"content" : ["rice", "curry"]
+	}
+]

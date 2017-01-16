@@ -1,0 +1,53 @@
+<md-dialog aria-label="New Medication">
+    <form role="form" name="medicationForm" novalidate="true" layout="column">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>New Medication</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout="column" flex>
+                <md-input-container flex>
+                    <label>Medicine</label>
+                    <input required type="text" name="name" ng-model="medication.name">
+                    <div ng-messages="medicationForm.name.$error">
+                        <div ng-message="required">Medicine is required!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Session</label>
+                    <md-select required name="session" ng-model="medication.session">
+                        <md-option ng-repeat="session in ['morning', 'noon', 'night']" value="{{session}}">
+                            {{session}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="medicationForm.doctor.$error">
+                        <div ng-message="required">Session is required!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Date</label>
+                    <md-datepicker required ng-model="medication['date-time']" name="date"></md-datepicker>
+
+                    <div ng-messages="medicationForm.date.$error">
+                        <div ng-message="valid">The entered value is not a date!</div>
+                        <div ng-message="required">This date is required!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <md-switch ng-model="medication.taken" aria-label="Taken">
+                        Taken
+                    </md-switch>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="ctrl.cancel()">
+                Cancel
+            </md-button>
+            <md-button ng-click="ctrl.store(medication)" ng-disabled="medicationForm.$invalid">
+                Save
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

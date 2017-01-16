@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Pulmozyme",
+		"intake": "TDS",
+		"remind" : "yes"
+	},
+	{
+		"name": "Pantaz",
+		"intake": "TDS",
+		"remind" : "no"
+	},
+	{
+		"name": "Ciprofloxacin",
+		"intake": "BD",
+		"remind" : "yes"
+	},
+	{
+		"name": "Fakemedicineoxin",
+		"intake": "BD",
+		"remind" : "yes"
+	}
+]

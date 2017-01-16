@@ -1,0 +1,108 @@
+<md-content layout="column" layout-fill class="relative-full-height">
+	<md-toolbar class="md-hue-2">
+		<div class="md-toolbar-tools">
+			<md-button class="md-icon-button" ng-click="appctrl.toggleNav()" aria-label="Menu">
+				<md-icon class="material-icons">menu</md-icon>
+			</md-button>
+			<h2>
+				<span>{{ page || "CF App" }}</span>
+			</h2>
+			<span flex></span>
+			<!-- <md-button class="md-icon-button" aria-label="Favorite">
+				<md-icon class="material-icons">favorite</md-icon>
+			</md-button> -->
+			
+
+			<md-menu md-position-mode="target-right target" >
+				<md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+					<md-icon class="material-icons">more_vert</md-icon>
+				</md-button>
+
+				<md-menu-content width="4" >
+					<md-menu-item>
+						<md-button ng-click="appctrl.logout()">
+							<md-icon class="material-icons">power_settings_new</md-icon>
+							<p>Logout</p>
+						</md-button>
+					</md-menu-item>
+				</md-menu-content>
+			</md-menu>
+
+		</div>
+	</md-toolbar>
+	<md-content layout="column" class="relative-full-height">
+		<md-sidenav
+			flex
+			md-theme="sideNav"
+			class="md-sidenav-left"
+			md-component-id="left"
+			md-is-locked-open="$mdMedia('gt-sm')"
+			md-whiteframe="6">
+
+			<md-toolbar md-theme="sideNavToolbar" class="md-hue-1" layout="row">
+				<md-list>
+					<md-list-item class="md-2-line">
+						<img ng-src="./img/avatar.jpg" class="round-avatar">
+						<div class="md-list-item-text">
+							<span class="md-toolbar-tools">Shifaza</span>
+						</div>
+					</md-list-item>
+				</md-list>
+			</md-toolbar>
+			<md-content layout-padding>
+				<md-list class="white-foreground initial-align">
+					<md-list-item flex>
+						<md-button flex ui-sref="cf.home" ng-click="appctrl.toggleNav()">
+							<md-icon class="material-icons">home</md-icon>
+							Home
+						</md-button>
+						<md-divider></md-divider>
+					</md-list-item>
+					<md-list-item flex>
+						<md-button flex ui-sref="cf.about" ng-click="appctrl.toggleNav()">
+							<md-icon class="material-icons">help_outline</md-icon>
+							About
+						</md-button>
+						<md-divider></md-divider>
+					</md-list-item>
+					<md-list-item flex>
+						<md-button flex ui-sref="cf.meals" ng-click="appctrl.toggleNav()">
+							<md-icon class="material-icons">restaurant</md-icon>
+							Meals
+						</md-button>
+						<md-divider></md-divider>
+					</md-list-item>
+					<!-- <md-list-item flex>
+						<md-button flex ui-sref="cf.exercise" ng-click="appctrl.toggleNav()">
+							<md-icon class="material-icons">directions_run</md-icon>
+							Exercise
+						</md-button>
+						<md-divider></md-divider>
+					</md-list-item> -->
+					<!-- <md-list-item flex>
+						<md-button flex ui-sref="cf.hospitalization" ng-click="appctrl.toggleNav()">
+							<md-icon class="material-icons">local_hospital</md-icon>
+							About
+						</md-button>
+						<md-divider></md-divider>
+					</md-list-item>
+					<md-list-item flex> -->
+						<md-button flex ui-sref="cf.clinicalVisits" ng-click="appctrl.toggleNav()">
+							<md-icon class="material-icons">local_hospital</md-icon>
+							Clinical Visit
+						</md-button>
+						<md-divider></md-divider>
+					</md-list-item>
+					<md-list-item flex>
+						<md-button flex ui-sref="cf.medications" ng-click="appctrl.toggleNav()">
+							<md-icon class="material-icons">hdr_strong</md-icon>
+							Medications
+						</md-button>
+					</md-list-item>
+				</md-list>
+			</md-content>
+		</md-sidenav>
+
+		<ui-view layout="column" flex></ui-view>
+	</md-content>
+</md-content>

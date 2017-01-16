@@ -1,0 +1,59 @@
+<md-dialog aria-label="New Visit">
+    <form role="form" name="visitForm" novalidate="true" layout="column">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>New Visit</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout="column" flex>
+                <md-input-container flex>
+                    <label>Department</label>
+                    <md-select required name="department" ng-model="visit.department">
+                        <md-option ng-repeat="department in ['ENT', 'Physician', 'CF Specialist']" value="{{department}}">
+                            {{department}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="visitForm.department.$error">
+                        <div ng-message="required">Department is required!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Doctor</label>
+                    <md-select required name="doctor" ng-model="visit.doctor">
+                        <md-option ng-repeat="doctor in ['Dr.Moon', 'Dr.Pluto']" value="{{doctor}}">
+                            {{doctor}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="visitForm.doctor.$error">
+                        <div ng-message="required">Doctor is required!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Reason</label>
+                    <input required type="text" name="reason" ng-model="visit.reason">
+                    <div ng-messages="visitForm.reason.$error">
+                        <div ng-message="required">Reason is required!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Date</label>
+                    <md-datepicker required ng-model="visit['date-time']" name="date"></md-datepicker>
+
+                    <div ng-messages="visitForm.date.$error">
+                        <div ng-message="valid">The entered value is not a date!</div>
+                        <div ng-message="required">This date is required!</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="ctrl.cancel()">
+                Cancel
+            </md-button>
+            <md-button ng-click="ctrl.store(visit)" ng-disabled="visitForm.$invalid">
+                Save
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

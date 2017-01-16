@@ -1,0 +1,29 @@
+<md-content class="md-whiteframe-20dp md-padding" flex="80" flex-gt-sm="50" flex-gt-md="30">
+	<form name="loginForm" role="form" novalidate="true" layout="column">
+		<md-input-container class="sm-margin-top sm-margin-bottom">
+			<label>Username</label>
+			<input required ng-model="ctrl.user.username" name="username" type="text" autocomplete="off">
+
+			<div ng-messages="loginForm.username.$error">
+				<div ng-message="required">Please enter a username</div>
+			</div>
+		</md-input-container>
+		<md-input-container class="sm-margin-top sm-margin-bottom">
+			<label>Password</label>
+			<input required ng-model="ctrl.user.password" name="password" type="password" autocomplete="off">
+
+			<div ng-messages="loginForm.password.$error">
+				<div ng-message="required">Please enter a password</div>
+			</div>
+		</md-input-container>
+		<div flex="100">
+			<md-button>
+				Forgot Password?
+			</md-button>
+			<span flex></span>
+			<md-button class="md-primary md-raised" ng-disabled="loginForm.$invalid" ng-click="ctrl.login($event)">
+				Login
+			</md-button>
+		</div>
+	</form>
+</md-content>

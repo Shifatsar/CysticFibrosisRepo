@@ -1,0 +1,38 @@
+<md-dialog aria-label="New Meal">
+    <form role="form" novalidate="true" layout="column">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>New Meal</h2>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout="column" flex>
+                <md-input-container flex>
+                    <label>Type</label>
+                    <md-select ng-model="meal.state">
+                        <md-option ng-repeat="type in ['lunch', 'breakfast', 'dinner']" value="{{type}}">
+                            {{type}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Date</label>
+                    <md-datepicker required ng-model="meal" name="date"></md-datepicker>
+
+                    <div ng-messages="myOtherForm.date.$error">
+                        <div ng-message="valid">The entered value is not a date!</div>
+                        <div ng-message="required">This date is required!</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="ctrl.cancel()">
+                Cancel
+            </md-button>
+            <md-button ng-click="ctrl.store(meal)">
+                Save
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

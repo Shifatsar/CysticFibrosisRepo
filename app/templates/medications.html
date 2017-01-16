@@ -1,0 +1,52 @@
+<md-content layout="column" layout-fill class="relative-full-height blank-bg-main" flex layout-padding >
+
+<!-- <h3 style="color: white; font-size: 16px; font-style: italic;">Medicine Schedule</h3> -->
+
+
+<div layout="row">
+	<h3 style="color: white; font-size: 16px; font-style: italic;">Recent Medications taken</h3>
+	<span flex></span>
+	<md-button class="md-raised md-primary" ng-click="ctrl.add($event)">
+		<md-icon class="material-icons">add</md-icon>
+		New
+	</md-button>
+</div>
+
+<md-content>
+	<md-list>
+		<md-list-item class="md-3-line" ng-repeat="medication in ctrl.medications">
+			<div class="md-list-item-text">
+				<h4>{{ medication.name }} <small>[{{ medication.session }}]</small></h4>
+				<p>{{ medication['date-time'] }}</p>
+				<small>{{ medication.taken == "yes" ? 'Medicine Taken' : 'Yet to take' }}</small>
+			</div>
+			<md-menu md-position-mode="target-right target" >
+				<md-button aria-label="Open menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+					<md-icon class="material-icons">delete</md-icon>
+				</md-button>
+
+				<md-menu-content width="4" >
+					<div layout="row" layout-align="center center">
+						<p class="md-padding">Delete this?</p>
+					</div>
+					<div layout="row">
+						<md-menu-item>
+							<md-button ng-click="ctrl.delete(medication)">
+								<md-icon class="material-icons">check</md-icon>
+								<p>Yes</p>
+							</md-button>
+						</md-menu-item>
+						<md-menu-item>
+							<md-button ng-click="null">
+								<md-icon class="material-icons">close</md-icon>
+								<p>No</p>
+							</md-button>
+						</md-menu-item>
+					</div>
+				</md-menu-content>
+			</md-menu>
+		</md-list-item>
+	</md-list>
+</md-content>
+
+</md-content>

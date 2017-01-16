@@ -1,0 +1,61 @@
+.relative {
+	position: relative;
+}
+
+.relative-full-height {
+	position: relative;
+	height: 100%;
+}
+
+.round-avatar {
+	border-radius: 100%;
+	
+	height: 100px;
+	width: 100px;
+	object-fit: cover;
+}
+
+.white-foreground, .white-foreground md-icon {
+	color: white !important;
+}
+
+.initial-align md-list-item button, .initial-align md-list-item a {
+	text-align: initial !important;
+}
+
+.blank-bg {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ), url('../img/healthpe.png');
+	background-size: cover;
+}
+
+.blank-bg-homepage {
+	background: url('../img/healthpe.png');
+	background-size: cover;
+}
+
+.blank-bg-main {
+	background: linear-gradient(
+      rgba(80, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ), url('../img/background.png');
+	background-size: cover;
+}
+
+
+.sm-margin-top {
+	margin-top: 10px;
+}
+
+.sm-margin-bottom {
+	margin-bottom: 5px;
+}
+
+.home-welcome{
+	font-size: 40px; 
+	color: white; 
+	text-shadow: 3px 3px #000000;
+	text-align: center;
+}
